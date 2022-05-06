@@ -46,18 +46,9 @@ Let's see what this program does...
 
 > It uses [`puts()`](https://man7.org/linux/man-pages/man3/puts.3.html), [`printf()`](https://man7.org/linux/man-pages/man3/printf.3.html), [`scanf()`](https://man7.org/linux/man-pages/man3/scanf.3.html) and [`system()`](https://man7.org/linux/man-pages/man3/system.3.html).
 
+At some point `scanf()` allows us to input a number, latter compared to **5276**.
+
 # Data
-
-## Variables
-
-```gdb
-  0x080484e7 <+83>:    cmp    $0x149c,%eax
-
-  (gdb) print 0x149c
-  $1 = 5276
-```
-
-Some value stored in `$eax` is compared to **5276** at some point.
 
 ## Strings
 
