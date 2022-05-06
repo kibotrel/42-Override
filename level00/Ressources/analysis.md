@@ -28,5 +28,5 @@ It gives us some information about how binaries are compiled and what we could o
 Use this command to compile [`source.c`](../source.c), reproduction source-code of the given binary.
 
 ```shell
- $> gcc -o level00 source.c
+ $> gcc -m32 -o level00 source.c
 ```
