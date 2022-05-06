@@ -2,20 +2,6 @@
 
 > For introductory information on this operating system and binary securities, check [here](./analysis.md).
 
-Let's see what does the binary do.
-
-```shell
-  $> ./level00
-  ***********************************
-  *            -Level00 -           *
-  ***********************************
-  Password: admin
-
-  Invalid Password!
-```
-
-> This program want us to input a particular string.
-
 Using [`gdb`](https://linux.die.net/man/1/gdb), we can dig through the binary to understand what's going on (full analysis [here](./gdb.md)). As we can clearly see, after our input is taken, a comparison with **5276** is evaluated. All we have to do to spawn a shell is then to input this number.
 
 ```shell

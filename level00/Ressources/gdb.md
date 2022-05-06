@@ -9,6 +9,7 @@ Let's see what this program does...
 ```gdb
   $> gdb ./level00
   (gdb) disassemble main
+    Dump of assembler code for function main:
     0x08048494 <+0>:     push   %ebp
     0x08048495 <+1>:     mov    %esp,%ebp
     0x08048497 <+3>:     and    $0xfffffff0,%esp
