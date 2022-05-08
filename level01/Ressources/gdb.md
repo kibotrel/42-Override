@@ -246,4 +246,4 @@ Since there is no built-in way to spawn a shell we'll need to use a buffer overf
   0x37634136 in ?? ()
 ```
 
-> Using this particular pattern ends up with a segfault due to overflow. The program tries to access address `0x37634136` thanks to that overflow. Using `wireshark` we can then, find out that this particular string is in fact at index **80** in the pattern, this is our offset for this buffer.
+> Using this particular pattern ends up with a segfault due to overflow. The program tries to access address `0x37634136` thanks to that overflow. Using [wireshark](https://wiremask.eu/tools/buffer-overflow-pattern-generator/) we can then, find out that this particular string is in fact at index **80** in the pattern, this is our offset for this buffer.
