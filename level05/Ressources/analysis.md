@@ -3,12 +3,12 @@
 Once logged on the we are prompted the following message:
 
 ```shell
-$> checksec --file level04
+$> checksec --file level05
 RELRO           STACK CANARY      NX            PIE             RPATH      RUNPATH      FILE
-Partial RELRO   No canary found   NX disabled   No PIE          No RPATH   No RUNPATH   level04
+No RELRO        No canary found   NX disabled   No PIE          No RPATH   No RUNPATH   level05
 ```
 
-> No canaries nor NX this time it should be pretty easy.
+> No protection at all, it should be easy this time.
 
 # [GDB analysis](./gdb.md)
 
@@ -19,5 +19,5 @@ Partial RELRO   No canary found   NX disabled   No PIE          No RPATH   No RU
 Use this command to compile [`source.c`](../source.c), reproduction source-code of the given binary.
 
 ```shell
- $> gcc -m32 -z execstack -fno-stack-protector -o level04 source.c
+ $> gcc -m32 -z,norelro -fno-stack-protector -z execstack -o level05 source.c
 ```
