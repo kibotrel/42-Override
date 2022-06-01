@@ -23,7 +23,7 @@ All we have to do now is to build a ret2libc attack using indices **1073741938**
 ```shell
   $> ./level07 
   ----------------------------------------------------
-    Welcome to wil's crappy number storage service!   
+    Welcome to wil crappy number storage service!   
   ----------------------------------------------------
   Commands:                                          
       store - store a number into the data storage    

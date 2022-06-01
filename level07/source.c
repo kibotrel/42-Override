@@ -6,9 +6,9 @@ void clear_stdin(void)
 {
 	char c = 0;
 
-	while((c = getchar()) != -1) {
-		if (c == "\n") {
-			break ;
+  while((c = getchar()) != -1) {
+    if (c == "\n") {
+      break ;
     }
   }
 }
