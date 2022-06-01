@@ -10,7 +10,7 @@ Partial RELRO   No canary found   NX enabled    No PIE          No RPATH   No RU
 
 It gives us some information about how binaries are compiled and what we could or couldn't use as leads to exploit these binaries.
 
-- [RELRO](https://www.redhat.com/en/blog/hardening-elf-binaries-using-relocation-read-only-relro) means **Rel**ocation **R**ead-**O**nly. It is a compiler option that force the linker to resolve all dynamically linked functions at the beginning of the execution and then makes the [Global offset table](https://en.wikipedia.org/wiki/Global_Offset_Table) (GOT) read-only. It is meant to prevent some security weakness induced by the GOT itself.
+- [RELRO](https://www.redhat.com/en/blog/hardening-elf-binaries-using-relocation-read-only-relro) means **Rel**ocation **R**ead-**O**nly. It is a compiler option that force the linker to resolve all dynamically linked functions at the beginning of the execution and then makes the [Global offset table](https://en.wikipedia.org/wiki/Global_Offset_Table) (GOT) read-only. It is meant to prevent some security weaknesses induced by the GOT itself.
 - [Stack canary](https://www.sans.org/blog/stack-canaries-gingerly-sidestepping-the-cage/) is a way to prevent buffer overflows to be exploitable by putting some value after the buffer itself on the stack and check if it was overriden on function return.
 - [NX](https://access.redhat.com/solutions/2936741) is an hardware technology use in processors to prevent execuion of certain types of code.
 - [PIE](https://en.wikipedia.org/wiki/Position-independent_code) is a process that will randomize code position in memory at run-time, making exploit harder to perform.
