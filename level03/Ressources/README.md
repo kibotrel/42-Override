@@ -4,7 +4,7 @@
 
 Using [`gdb`](https://linux.die.net/man/1/gdb), we can dig through the binary to understand what's going on (full analysis [here](./gdb.md)). After a deep analysis we find out that our input is used as part of a poor cypher process. We start from the string ``Q}|u`sfg~sf{}|a3`` and using a XOR on each character with our input substracted to a secret value (**322424845**) we need to land on `Congratulations!`.
 
-The problem with this is that to know the mask you need to apply on any given character to get its ciphered version is as easy as XORing the base character with its ciphered analog. Since we now the base and the expected output, the question is what does `Q ^ C` equal to?
+The problem with this is that to know the mask you need to apply on any given character to get its ciphered version is as easy as XORing the base character with its ciphered analog. Since we know the base and the expected output, the question is what does `Q ^ C` equal to?
 Q's ASCII code is **81** while C's is **67**.
 
 ```shell
